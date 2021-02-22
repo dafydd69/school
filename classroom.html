@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <h1 style="text-align: center; font-family: 'Concert One', cursive; color: darkslategray;">Classroom Helper</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoom Scheduler</title>
+  <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="classroom.css">
+</head>
+
+<body>
+  <div class="clock">
+    <span id="time" class="clock-time"></span>
+    <span class="clock-ampm"></span>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+<h2 id="science" class="classHeader" style="top: 10%; left: 57.5%; position: absolute; width:200px; color: darkslategray;">Social Studies</h2>
+<h2 id="social" class="classHeader" style="top: 40%; left: 34%; position: absolute; width:200px; color: darkslategray;">Religion</h2>
+<h2 id="religion" class="classHeader" style="top: 40%; left: 61.5%; position: absolute; width:200px; color: darkslategray;">ELA</h2>
+<h2 id="ela" class="classHeader" style="top: 10%; left: 645px; position: absolute; width:200px; color: darkslategray;">Science</h2>
+<h2 id="math" class="classHeader" style="top: 660px; left: 47.5%; position: absolute; width:200px; color: darkslategray;">Math</h2>
+
+<button class="openButton" id="openScience" onclick="science();">Open Science</button>
+<button class="openButton" id="openSocial" onclick="social();">Open Social Studies</button>
+<button class="openButton" id="openReligion" onclick="religion();">Open Religion</button>
+<button class="openButton" id="openELA" onclick="ela();">Open ELA</button>
+<button class="openButton" id="openMath" onclick="math();">Open Math</button>
+
+<h2 id="back">Back to Zoom</h2>
+
+<script>
+    const back = document.getElementById("back")
+back.addEventListener("click", function(){
+  window.location.href = 'index.html'
+})
+</script>
+
+<img src="https://cdn.discordapp.com/attachments/667076224488833054/813260065356120104/images.png" alt="could not display the img" id="cloud1" class="cloud">
+<img src="https://cdn.discordapp.com/attachments/667076224488833054/813260065356120104/images.png" alt="could not display img" id="cloud2" class="cloud">
+<img src="https://cdn.discordapp.com/attachments/667076224488833054/813260065356120104/images.png" alt="could not display img" id="cloud3" class="cloud">
+<img src="https://cdn.discordapp.com/attachments/667076224488833054/813260065356120104/images.png" alt="could not display img" id="cloud4" class="cloud">
+
+</html>

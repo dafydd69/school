@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <h1 style="text-align: center; font-family: 'Concert One', cursive; color: darkslategray;">Zoom Helper</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoom Scheduler</title>
+  <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="clock">
+    <span id="time" class="clock-time"></span>
+    <span class="clock-ampm"></span>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+<h2 id="homeroom" class="classHeader" style="top: 10%; left: 33%">Homeroom</h2>
+<h2 id="science" class="classHeader" style="top: 10%; left: 60.0%">Science</h2>
+<h2 id="social" class="classHeader" style="top: 38%; left: 31.5%; position: absolute; width:200px;">Social Studies</h2>
+<h2 id="religion" class="classHeader" style="top: 38%; left: 60%; position: absolute; width:200px;">Religion</h2>
+<h2 id="ela" class="classHeader" style="top: 67%; left: 35%; position: absolute; width:200px;">ELA</h2>
+<h2 id="math" class="classHeader" style="top: 67%; left: 61%; position: absolute; width:200px;">Math</h2>
+
+<button class="openButton" id="startHomeroom" onclick="openHome();">Start Homeroom</button>
+<button class="openButton" id="startScience" onclick="openSci();">Start Science</button>
+<button class="openButton" id="startSocial" onclick="openSocial();">Start Social Studies</button>
+<button class="openButton" id="startReligion" onclick="openReli();">Start Religion</button>
+<button class="openButton" id="startELA" onclick="openELA();">Start ELA</button>
+<button class="openButton" id="startMath" onclick="openMath();">Start Math</button>
+
+<h2 id="classroom">Google Classroom</h2>
+<script>
+  const classroom = document.getElementById("classroom")
+  classroom.addEventListener("click", function(){
+    window.location.href = 'classroom.html'
+  })
+</script>
+
+<script>
+const homeroomBtn = document.getElementById("startHomeroom")
+const scienceBtn = document.getElementById("startScience")
+const socialBtn = document.getElementById("startSocial")
+const religionBtn = document.getElementById("startReligion")
+const elaBtn = document.getElementById("startELA")
+const mathBtn = document.getElementById("startMath")
+
+let date = new Date()
+let hours = date.getHours()
+let minutes = date.getMinutes()
+let secs = date.getSeconds()
+let day = date.getDay()
+
+function checkTime() {
+    setInterval(() => {
+      if(hours === 7 && minutes === 55) {
+        homeroomBtn.style.backgroundColor = 'darkcyan'
+        setTimeout(() => {
+          homeroomBtn.style.backgroundColor = 'skyblue'
+        }, 600000);
+      } else if(hours === 8 && minutes === 30 && day != 5) {
+        scienceBtn.style.backgroundColor = 'darkcyan'
+        setTimeout(() => {
+          scienceBtn.style.backgroundColor = 'skyblue'
+        }, 600000);
+      } else if(hours === 9 && minutes === 20) {
+        socialBtn.style.backgroundColor = 'darkcyan'
+        setTimeout(() => {
+          socialBtn.style.backgroundColor = 'skyblue'
+        }, 600000);
+      } else if(hours === 10 && minutes === 45 && day != 5) {
+        religionBtn.style.backgroundColor = 'darkcyan'
+        setTimeout(() => {
+          religionBtn.style.backgroundColor = 'skyblue'
+        }, 600000);
+      } else if(hours === 11 && minutes === 35) {
+        elaBtn.style.backgroundColor = 'darkcyan'
+        setTimeout(() => {
+          elaBtn.style.backgroundColor = 'skyblue'
+        }, 600000);
+      } else if(hours === 13 && minutes === 15 && day != 5) {
+        mathBtn.style.backgroundColor = 'darkcyan'
+        setTimeout(() => {
+          mathBtn.style.backgroundColor = 'skyblue'
+        }, 600000);
+      } else if(day === 5 && hours === 10 && minutes === 45) {
+        mathBtn.style.backgroundColor = 'darkcyan'
+        setTimeout(() => {
+          mathBtn.style.backgroundColor = 'skyblue'
+        }, 600000);
+      } else if(day === 5 && hours === 13 && minutes === 15) {
+        scienceBtn.style.backgroundColor = 'darkcyan'
+        setTimeout(() => {
+          scienceBtn.style.backgroundColor = 'skyblue'
+        }, 600000);
+      }
+    }, 1000);
+}
+
+checkTime();
+
+</script>
+
+<img src="https://cdn.discordapp.com/attachments/667076224488833054/813260065356120104/images.png" alt="could not display  the img" id="cloud1" class="cloud">
+<img src="https://cdn.discordapp.com/attachments/667076224488833054/813260065356120104/images.png" alt="could not display img" id="cloud2" class="cloud">
+<img src="https://cdn.discordapp.com/attachments/667076224488833054/813260065356120104/images.png" alt="could not display img" id="cloud3" class="cloud">
+<img src="https://cdn.discordapp.com/attachments/667076224488833054/813260065356120104/images.png" alt="could not display img" id="cloud4" class="cloud">
+</html>
